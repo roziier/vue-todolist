@@ -12,8 +12,10 @@
       <h1>
         {{title}}
       </h1>
-      <input type="text" name="" value="">
-      <button type="button" name="button">Add to your list</button>
+      <!-- assegno un id all'input per far capire nella funzione che devo prendere il value di questo input -->
+      <input id="addItems" type="text" name="" value="">
+      <!-- inserisco il click, che leggerà la funzione per aggiungere l'input.value alla lista -->
+      <button v-on:click="addNewI" type="button" name="button">Add to your list</button>
 
       <ul>
         <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
