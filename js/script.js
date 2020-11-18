@@ -20,8 +20,10 @@ var app = new Vue({
       var print = document.getElementById('addItems');
 
      // se il valore sarà diverso da stringa vuota stampo
-     if (print.value !== '')
-     this.items.push({text: print.value});
+     if (print.value !== '') {
+       this.items.push({text: print.value});
+     }
+     
    },
    // funzione per cancellare qualcosa dalla lista
    deleteItem: function(index) {
