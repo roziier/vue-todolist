@@ -9,7 +9,7 @@
   <body>
 
     <div id="root">
-      
+
       <!-- immagine -->
       <div class="flex">
         <img v-bind:src="'https://www.boolean.careers/images/misc/' + img" style="width:500px;height:120px"alt="">
@@ -24,8 +24,8 @@
 
       <!-- blocco per inserimento items -->
       <div class="flex">
-        <!-- assegno un id all'input per far capire nella funzione che devo prendere il value di questo input -->
-        <input id="addItems" type="text" name="" value="">
+        <!-- assegno un id all'input per far capire nella funzione che devo prendere il value di questo input + funzione press enter -->
+        <input id="addItems" type="text" v-on:click="addNewI">
         <!-- inserisco il click, che leggerà la funzione per aggiungere l'input.value alla lista -->
         <button v-on:click="addNewI" type="button" name="button">Add to your list</button>
       </div>
