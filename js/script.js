@@ -18,9 +18,10 @@ var app = new Vue({
       // questa è la variabile creamta che mi permetterà di stampare in html
       var print = document.getElementById('addItems');
 
+     // se il valore sarà diverso da stringa vuota stampo
      if (print.value !== '')
      this.items.push({text: print.value});
-   }
+   } 
 
   }
 });
