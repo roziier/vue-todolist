@@ -35,10 +35,10 @@
         <div class="list">
           <ul>
             <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
-            <li v-for = "(item, index) in items">
+            <li id="margin" class="between" v-for = "(item, index) in items">
               {{item.text}}
               <!-- inserisco on click su button per cancellare -->
-              <button v-on:click="deleteItem(index)" type="button" name="button">X</button></li>
+              <button id="left" v-on:click="deleteItem(index)" type="button" name="button">X</button></li>
           </ul>
         </div>
       </div>
