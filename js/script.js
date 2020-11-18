@@ -6,4 +6,12 @@
 // STRUTTURA vue
 var app = new Vue({
   el: "#root",
+  data: {
+    title: 'Your things to do list',
+    items: [
+      {text: 'Meditazione'},
+      {text: 'Corsa'},
+      {text: 'Leggere'}
+    ]
+  }
 });
