@@ -11,7 +11,8 @@ var app = new Vue({
     // questo è il dato che mi permetterà, tramite un array, di gestire quello che andrò ad aggiungere successivamente con la funzione
     items: [
 
-    ]
+    ],
+    img: 'logo.png'
   },
   methods: {
     // funzione per aggiungere qualcosa alla lista
@@ -23,7 +24,7 @@ var app = new Vue({
      if (print.value !== '') {
        this.items.push({text: print.value});
      }
-     
+
    },
    // funzione per cancellare qualcosa dalla lista
    deleteItem: function(index) {
