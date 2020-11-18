@@ -10,16 +10,17 @@ var app = new Vue({
     title: 'Your things to do list',
     // questo è il dato che mi permetterà, tramite un array, di gestire quello che andrò ad aggiungere successivamente con la funzione
     items: [
-      {text: 'Meditazione'},
-      {text: 'Corsa'},
-      {text: 'Leggere'}
+
     ]
   },
   methods: {
     addNewI: function () {
       // questa è la variabile creamta che mi permetterà di stampare in html
       var print = document.getElementById('addItems');
-    }
+
+     if (print.value !== '')
+     this.items.push({text: print.value});
+   }
 
   }
 });
