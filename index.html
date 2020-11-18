@@ -21,7 +21,8 @@
         <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
         <li v-for = "item in items">
           {{item.text}}
-          <button type="button" name="button">X</button></li>
+          <!-- inserisco on click su button per cancellare -->
+          <button v-on:click="deleteItem" type="button" name="button">X</button></li>
       </ul>
 
     </div>

@@ -14,14 +14,20 @@ var app = new Vue({
     ]
   },
   methods: {
+    // funzione per aggiungere qualcosa alla lista
     addNewI: function () {
-      // questa è la variabile creamta che mi permetterà di stampare in html
+      // questa è la variabile creata che mi permetterà di stampare in html
       var print = document.getElementById('addItems');
 
      // se il valore sarà diverso da stringa vuota stampo
      if (print.value !== '')
      this.items.push({text: print.value});
-   } 
+   },
+   // funzione per cancellare qualcosa dalla lista
+   deleteItem: function () {
+
+   }
+
 
   }
 });
