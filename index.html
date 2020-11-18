@@ -19,10 +19,10 @@
 
       <ul>
         <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
-        <li v-for = "item in items">
+        <li v-for = "(item, index) in items">
           {{item.text}}
           <!-- inserisco on click su button per cancellare -->
-          <button v-on:click="deleteItem" type="button" name="button">X</button></li>
+          <button v-on:click="deleteItem(index)" type="button" name="button">X</button></li>
       </ul>
 
     </div>

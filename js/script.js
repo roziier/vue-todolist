@@ -24,7 +24,8 @@ var app = new Vue({
      this.items.push({text: print.value});
    },
    // funzione per cancellare qualcosa dalla lista
-   deleteItem: function () {
+   deleteItem: function(index) {
+     this.items.splice(index,1)
 
    }
 
