@@ -25,20 +25,22 @@
       <!-- blocco per inserimento items -->
       <div class="flex">
         <!-- assegno un id all'input per far capire nella funzione che devo prendere il value di questo input + funzione press enter -->
-        <input id="addItems" type="text" v-on:click="addNewI">
+        <input id="addItems" type="text" v-on:keypress.enter="addNewI">
         <!-- inserisco il click, che leggerà la funzione per aggiungere l'input.value alla lista -->
         <button class="btn" v-on:click="addNewI" type="button" name="button">Add to your list</button>
       </div>
 
       <!-- blocco per cancellazione items -->
       <div class="flex">
-      <ul>
-        <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
-        <li v-for = "(item, index) in items">
-          {{item.text}}
-          <!-- inserisco on click su button per cancellare -->
-          <button v-on:click="deleteItem(index)" type="button" name="button">X</button></li>
-      </ul>
+        <div class="list">
+          <ul>
+            <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
+            <li v-for = "(item, index) in items">
+              {{item.text}}
+              <!-- inserisco on click su button per cancellare -->
+              <button v-on:click="deleteItem(index)" type="button" name="button">X</button></li>
+          </ul>
+        </div>
       </div>
 
     </div>
