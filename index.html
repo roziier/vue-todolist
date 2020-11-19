@@ -38,10 +38,12 @@
             <li id="margin" class="between" v-for = "(item, index) in items">
               {{item.text}}
               <!-- inserisco on click su button per cancellare -->
-              <button id="left" v-on:click="deleteItem(index)" type="button" name="button">X</button></li>
+              <button id="left" v-on:click="deleteItem(index)" type="button" name="button">&times;</button></li>
           </ul>
         </div>
       </div>
+
+      <!-- blocco da far apparire quando l'utente scrive due volte la stessa cosa -->
 
     </div>
 

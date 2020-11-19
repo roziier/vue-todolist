@@ -76,4 +76,5 @@ transition: all 0.75s;
 #left{
   font-size: 25px;
   position: relative;
+  right: 20px;
 }
