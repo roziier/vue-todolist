@@ -8,6 +8,8 @@ var app = new Vue({
   el: "#root",
   data: {
     title: 'Your things to do list',
+    userInput: "",
+    doubleInsert: false,
     // questo è il dato che mi permetterà, tramite un array, di gestire quello che andrò ad aggiungere successivamente con la funzione
     items: [
 
@@ -18,19 +20,37 @@ var app = new Vue({
     // funzione per aggiungere qualcosa alla lista
     addNewI: function () {
       // questa è la variabile creata che mi permetterà di stampare in html
-      var print = document.getElementById('addItems');
 
-     // se il valore sarà diverso da stringa vuota stampo
-     if (print.value !== '') {
-       this.items.push({text: print.value});
-     }
+      if (this.userInput == '') {
+        alert("Devi scrivere qualcosa");
 
-   },
-   // funzione per cancellare qualcosa dalla lista
-   deleteItem: function(index) {
+      }
+      else if (this.items.includes(this.userInput)) {
+      this.doubleInsert = true;
+
+      }
+      else {
+        this.items.push(this.userInput);
+        this.userInput = '';
+      }
+
+    },
+    // funzione per confermare il duplicato
+    reConfirm: function () {
+     this.items.push(this.userInput);
+     this.doubleInsert = false;
+     this.userInput = "";
+    },
+
+    // funzione per cancellare il duplicato
+    deleteDouble: function () {
+     this.doubleInsert = false;
+    },
+
+    // funzione per cancellare qualcosa dalla lista
+    deleteItem: function(index) {
      this.items.splice(index,1)
-
-   }
+    }
 
 
   }

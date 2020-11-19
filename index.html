@@ -25,7 +25,7 @@
       <!-- blocco per inserimento items -->
       <div class="flex">
         <!-- assegno un id all'input per far capire nella funzione che devo prendere il value di questo input + funzione press enter -->
-        <input id="addItems" type="text" v-on:keypress.enter="addNewI">
+        <input id="addItems" type="text" v-on:keypress.enter="addNewI" v-model="userInput">
         <!-- inserisco il click, che leggerà la funzione per aggiungere l'input.value alla lista -->
         <button class="btn" v-on:click="addNewI" type="button" name="button">Add to your list</button>
       </div>
@@ -36,7 +36,7 @@
           <ul>
             <!-- inserisco il v-for per ottenere il ciclo di tutto ciò che entrerà nell'array -->
             <li id="margin" class="between" v-for = "(item, index) in items">
-              {{item.text}}
+              {{item}}
               <!-- inserisco on click su button per cancellare -->
               <button id="left" v-on:click="deleteItem(index)" type="button" name="button">&times;</button></li>
           </ul>
@@ -44,14 +44,14 @@
       </div>
 
       <!-- blocco da far apparire quando l'utente scrive due volte la stessa cosa -->
-      <div class="back flex2 hidden">
+      <div class="back flex2" :class="(doubleInsert) ? '' : 'hidden'">
         <div class="window">
           <div id="text" class="flex">
             Hai già inserito questa cosa nella lista di cose da fare. Vuoi aggiungere un duplicato?
           </div>
           <div class="flex">
-            <button class="btn" type="button" name="button">YES</button>
-            <button class="btn" type="button" name="button">NO</button>
+            <button class="btn" type="button" name="button" v-on:click="reConfirm">YES</button>
+            <button class="btn" type="button" name="button" v-on:click="deleteDouble">NO</button>
           </div>
         </div>
 
